@@ -2,20 +2,3 @@ susdev_fetch_dirs
 =================
 
 grep function task
-
-open (ALLDIRS, "<dirs.txt") || die print"Error Cant open<br>dirs.txt<br>$!<hr>";
-                   @All_Dirs = <ALLDIRS>;
-                   close (ALLDIRS);
-                   
-  
-foreach my $dir (@All_Dirs) {
-    my $dir_handle;
-    chomp $dir;
-    opendir($dir_handle, $dir);
-    my @files = readdir($dir_handle);
-    my $filecount = grep { !/^\./ }@files;
-    print"my Directory is: ($dir) my file Qty is: ($filecount)<hr>\n";
-  }
-  
-  
-  close (ALLDIRS);
